@@ -1,0 +1,13 @@
+server:
+  port: 30002
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:30001/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    hostname: 127.0.0.1
+spring:
+  application:
+    name: demo-zuul-server

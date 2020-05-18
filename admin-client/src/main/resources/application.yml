@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: admin-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:30001/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    hostname: 127.0.0.1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+server:
+  port: 8914

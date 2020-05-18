@@ -1,0 +1,41 @@
+server:
+  port: 30002
+
+spring:
+  application:
+    name: demo-producers
+  datasource:
+    username: gameover
+    password: zgz830330
+    url: jdbc:mysql://139.129.233.171:3306/n_utou?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+#  redis:
+#    host: 10.0.182.20
+#    password: Redis@Cest
+#    port: 6379
+#    timeout: 30000
+#  rabbitmq:
+#    username: guest
+#    password: guest
+#    host: gg.theonelive.cn
+#    port: 5672
+#  activemq:
+#    broker-url: tcp://10.0.182.19:61616
+#    user: admin
+#    password: admin
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:30001/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    hostname: 127.0.0.1
+management:
+  endpoints:
+    web:
+      base-path: /

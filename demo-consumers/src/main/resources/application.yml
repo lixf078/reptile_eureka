@@ -1,0 +1,42 @@
+server:
+  port: 30003
+
+spring:
+  application:
+    name: demo-consumers
+  datasource:
+    username: gameover
+    password: zgz830330
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://139.129.233.171:3306/n_utou?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    druid:
+      initial-size: 1
+      max-active: 50
+      min-idle: 1
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      #validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+  redis:
+    host: 127.0.0.1
+    password:
+    port: 6379
+    timeout: 30000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:30001/eureka/
+    healthcheck:
+      enabled: true
+  instance:
+    hostname: 127.0.0.1
+management:
+  endpoints:
+    web:
+      base-path: /
